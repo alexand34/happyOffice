@@ -1,0 +1,5 @@
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Office.BusinessLogic.dll
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Office.BusinessLogic.pdb
+C:\office\Office.Data\Office.BusinessLogic\obj\Debug\Office.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\office\Office.Data\Office.BusinessLogic\obj\Debug\Office.BusinessLogic.dll
+C:\office\Office.Data\Office.BusinessLogic\obj\Debug\Office.BusinessLogic.pdb
