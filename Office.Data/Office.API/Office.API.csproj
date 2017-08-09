@@ -249,10 +249,14 @@
     <Content Include="Client\Scripts\main.js" />
     <Content Include="Client\panels.html" />
     <Content Include="Client\Scripts\Controllers\personGroupsCtrl.js" />
+    <Content Include="Client\Scripts\Services\groupSvc.js" />
     <Content Include="Client\Scripts\Services\personSvc.js" />
+    <Content Include="Client\Scripts\viewModels\group.vm.js" />
     <Content Include="Client\Scripts\viewModels\person.vm.js" />
+    <Content Include="Client\views\groups\addPersonGroup.html" />
+    <Content Include="Client\views\groups\index.html" />
     <Content Include="Client\views\home.html" />
-    <Content Include="Client\views\PersonGroups\personGroups.html" />
+    <Content Include="Client\views\Persons\addPerson.html" />
     <Content Include="Client\views\Persons\persons.html" />
     <Content Include="Client\widgets.html" />
     <Content Include="Content\bootstrap.css" />

@@ -3,7 +3,8 @@
 happyOffice.service('personViewModel', ['$http', 'personSvc', function ($http, personSvc) {
     var viewModel = {
         init: function () {
-            personSvc.getAll().then(function (result) {
+            var group = window.location.href.split('/');
+            personSvc.getAll(group[group.length-1]).then(function (result) {
                 _.extend(viewModel, result);
             });
         },
@@ -11,6 +12,9 @@ happyOffice.service('personViewModel', ['$http', 'personSvc', function ($http, p
             personSvc.getPerson(id).then(function (res) {
                 _.extend(viewModel, res);
             });
+        },
+        AddPerson: function(groupId, name, position) {
+            personSvc.addPerson(groupId, name, position);
         },
         deletePerson: function (id) {
             personSvc.deletePerson(id);

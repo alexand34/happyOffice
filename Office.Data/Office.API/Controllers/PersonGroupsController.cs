@@ -7,12 +7,20 @@ using System.Web.Http;
 
 namespace Office.API.Controllers
 {
+
     public class PersonGroupsController : ApiController
     {
         FaceServiceClient faceServiceClient = new FaceServiceClient("2554672d2fad4aef9238a7476a7460d1", "https://westus.api.cognitive.microsoft.com/face/v1.0");
-        StoreImagesService storeImagesService = new StoreImagesService();
+        //StoreImagesService storeImagesService = new StoreImagesService();
+
+        public PersonGroupsController()
+        {
+            
+        }
 
         [HttpGet]
+        [AllowAnonymous]
+        [Route("api/PersonGroups/getAll")]
         public async Task<IHttpActionResult> GetAll()
         {
             try
@@ -27,6 +35,8 @@ namespace Office.API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
+        [Route("api/PersonGroups/get/{id}")]
         public async Task<IHttpActionResult> Get(string id)
         {
             try
@@ -41,11 +51,12 @@ namespace Office.API.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
+        [Route("api/PersonGroups/add")]
         public async Task<IHttpActionResult> AddPersonGroup(PersonGroup personGroup)
         {
             try
             {
-                storeImagesService.CreatePersonGroupFolder(personGroup.PersonGroupId);
                 await faceServiceClient.CreatePersonGroupAsync(personGroup.PersonGroupId, personGroup.Name, personGroup.UserData);
             }
             catch(Exception ex)
@@ -55,13 +66,15 @@ namespace Office.API.Controllers
             return Ok();
         }
 
-        [HttpDelete]
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("api/PersonGroups/delete/{id}")]
         public async Task<IHttpActionResult> DeletePersonGroup(string id)
         {
             try
             {
                 await faceServiceClient.DeletePersonGroupAsync(id);
-                storeImagesService.DeletePersonGroupFolder(id);
+                //storeImagesService.DeletePersonGroupFolder(id);
                 return Ok();
             }
             catch(Exception ex)

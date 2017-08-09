@@ -7,6 +7,7 @@
             </a>
         </li>
         <li class="active">Persons</li>
+        <li class="active">{{groupId}}</li>
     </ol>
 </div><!--/.row-->
 
@@ -15,7 +16,9 @@
         <h1 class="page-header">Persons</h1>
     </div>
 </div><!--/.row-->
-
+    <div>
+        <a href="#/persons/add/{{groupId}}"><button class="btn btn-primary">Add Person</button></a>
+    </div>
 <table>
     <thead>
     <tr>
@@ -26,11 +29,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td><strong>showSpeed</strong></td>
-        <td>15</td>
-        <td>The speed of the show/reveal</td>
-        <td><button class="btn btn-danger">Delete</button></td>
+    <tr ng-repeat="model in viewModel.data">
+        <td>1{{model.PersonId}}</td>
+        <td>{{model.Name}}></td>
+        <td>{{model.UserData}}</td>
+        <td><button class="btn btn-danger" ng-click="viewModel.delete(groupId, model.PersonId)">Delete</button></td>
     </tr>
     </tbody>
 </table>

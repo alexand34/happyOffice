@@ -1,0 +1,35 @@
+﻿<div ng-controller="personGroupCtrl">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Person Groups</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="col-lg-12">
+        <h1 class="page-header">Person Groups</h1>
+    </div>
+    <div>
+        <a href="#/groups/add"><button class="btn btn-primary">Add Group</button></a>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Group ID</th>
+            <th>Group Name</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="model in viewModel.data">
+            <td><a href="#/persons/{{model.PersonGroupId}}">{{model.PersonGroupId}}</a></td>
+            <td>{{model.Name}}</td>
+            <td><button class="btn btn-danger" ng-click="viewModel.deletePersonGroup(model.PersonGroupId)">Delete</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

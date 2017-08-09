@@ -4,11 +4,11 @@ happyOffice.service('personSvc',
     ['$q', '$http', function ($q, $http) {
 
         var personSvc = function () {
-            this.getAll = function () {
+            this.getAll = function (group) {
                 var deferred = $q.defer();
                 $http({
                     method: 'GET',
-                    url: '/api/getAll'
+                    url: '/api/Person/getAll/'+group
                 }).then(function successCallback(response){
                     deferred.resolve(response);
                 });
@@ -41,11 +41,15 @@ happyOffice.service('personSvc',
                 return deferred.promise;
             };
 
-            this.addPerson = function (data) {
+            this.addPerson = function (groupId, name, position) {
                 var deferred = $q.defer();
+                var data = new Object();
+                data.GroupId = groupId;
+                data.Name = name;
+                data.Position = position;
                 $http({
                     method: 'POST',
-                    url: 'api/add/',
+                    url: '/api/Person/add/',
                     data: data
                 }).success(function (res) {
                     deferred.resolve(res);

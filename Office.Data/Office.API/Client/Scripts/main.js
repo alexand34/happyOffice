@@ -19,7 +19,7 @@ happyOffice.config(['$routeProvider', function ($routeProvide) {
                     templateurl: 'views/PersonGroups/addPersonGroup.html',
                     controller: 'personGroupCtrl'
                 })
-            .when('/persons',
+            .when('/persons/:groupId',
                 {
                     templateUrl: 'views/persons/persons.html',
                     controller: 'personCtrl'
@@ -27,6 +27,21 @@ happyOffice.config(['$routeProvider', function ($routeProvide) {
             .when('/persons/add',
                 {
                     templateUrl: 'views/persons/addPerson.html',
+                    controller: 'personCtrl'
+                })
+            .when('/groups',
+                {
+                    templateUrl: 'views/groups/index.html',
+                    controller: 'personGroupCtrl'
+                })
+            .when('/groups/add',
+                {
+                    templateUrl: 'views/groups/addPersonGroup.html',
+                    controller: 'personGroupCtrl'
+                })
+            .when('/persons/add/:groupId',
+                {
+                    templateUrl: 'views/Persons/addPerson.html',
                     controller: 'personCtrl'
                 })
             .otherwise(
