@@ -22,7 +22,7 @@ happyOffice.service('personSvc',
                     method: 'GEET',
                     url: 'api/get/' + id,
                     data: data
-                }).success(function (res) {
+                }).then(function success(res) {
                     deferred.resolve(res);
                 });
 
@@ -51,12 +51,13 @@ happyOffice.service('personSvc',
                     method: 'POST',
                     url: '/api/Person/add/',
                     data: data
-                }).success(function (res) {
+                }).then(function success(res) {
                     deferred.resolve(res);
                 });
 
                 return deferred.promise;
             };
+
         };
         return new personSvc();
     }]);

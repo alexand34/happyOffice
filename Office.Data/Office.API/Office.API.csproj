@@ -203,6 +203,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\PersonGroupsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -239,6 +240,7 @@
     <Content Include="Client\js\html5shiv.min.js" />
     <Content Include="Client\js\jquery-1.11.1.min.js" />
     <Content Include="Client\js\lumino.glyphs.js" />
+    <Content Include="Client\js\modernizr.js" />
     <Content Include="Client\js\npm.js" />
     <Content Include="Client\js\q.js" />
     <Content Include="Client\js\respond.min.js" />
@@ -334,6 +336,10 @@
       <Project>{257b61b9-6a67-48eb-ac74-18a1df7f3915}</Project>
       <Name>Office.BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Office.Data\Office.Data.csproj">
+      <Project>{85f9630e-fd05-4fb4-93f2-a8eb2b26e695}</Project>
+      <Name>Office.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -357,7 +363,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65015</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

@@ -1,4 +1,4 @@
-﻿<div ng-controller="personCtrl">
+﻿<div ng-controller="personCtrl" ng-cloak>
     <div class="row">
         <ol class="breadcrumb">
             <li>
@@ -23,15 +23,36 @@
                     <form role="form">
                         <div class="form-group">
                             <label>Name</label>
-                            <input class="form-control" ng-model="viewModel.name">
+                            <input class="form-control" ng-model="NewUser.Name">
                         </div>
                         <div class="form-group">
                             <label>Position</label>
-                            <input class="form-control" ng-model="viewModel.position">
+                            <input class="form-control" ng-model="NewUser.Position">
                         </div>
-                        <button class="btn btn-primary" ng-click="viewModel.AddPerson(groupId, viewModel.name, viewModel.position)">Add</button>
                     </form>
                 </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <label>Images</label>
+            </div>
+            <button class="btn btn-primary" style="cursor:pointer; margin: 10px;" onclick="document.getElementById('file').click();">Add Images</button>
+            <div class="panel-body">
+                <div style="position:relative;">
+                    <div class="row">
+                        <div class="col-lg-4" ng-repeat="image in imagesrc">
+                            <div class="thumbnail">
+                                <img style="height:240px;" src="{{image.Src}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position:absolute;bottom:0;display:block;width:100%; color:#fff;background-color:#333;">
+                        <input id="file" ng-hide="true" type="file" accept="images/*" class="form-control" multiple ng-files="getTheFiles($files)" />
+
+                    </div>
+                </div>
+                <button class="btn btn-success pull-left" ng-click="Submit()">Submit</button>
             </div>
         </div>
     </div>

@@ -10,11 +10,9 @@ happyOffice.service('groupViewModel',
                     _.extend(viewModel, result);
                 });
             },
-
             AddPersonGroup: function() {
                 groupSvc.add(viewModel.id, viewModel.name);
             },
-
             deletePersonGroup: function(id) {
                 groupSvc.delete(id);
                 location.reload();

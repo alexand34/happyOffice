@@ -11,7 +11,6 @@ namespace Office.API.Controllers
     public class PersonGroupsController : ApiController
     {
         FaceServiceClient faceServiceClient = new FaceServiceClient("2554672d2fad4aef9238a7476a7460d1", "https://westus.api.cognitive.microsoft.com/face/v1.0");
-        //StoreImagesService storeImagesService = new StoreImagesService();
 
         public PersonGroupsController()
         {
@@ -74,7 +73,6 @@ namespace Office.API.Controllers
             try
             {
                 await faceServiceClient.DeletePersonGroupAsync(id);
-                //storeImagesService.DeletePersonGroupFolder(id);
                 return Ok();
             }
             catch(Exception ex)
