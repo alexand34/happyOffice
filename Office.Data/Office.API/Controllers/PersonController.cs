@@ -91,7 +91,7 @@ namespace Office.API.Controllers
         [Route("api/Person/addPerson")]
         public async Task<IHttpActionResult> addPerson()
         {
-            string path = HttpContext.Current.Server.MapPath("~/Files/");
+            string path = HttpContext.Current.Server.MapPath("~/Images/Files/");
 
             var model = HttpContext.Current.Request.Form["NewUser"];
 
