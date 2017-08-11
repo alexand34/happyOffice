@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office.BusinessLogic", "Off
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office.Data", "Office.Data\Office.Data.csproj", "{85F9630E-FD05-4FB4-93F2-A8EB2B26E695}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Office.Common", "Office.Common\Office.Common.csproj", "{A80CCC99-1DBA-494E-A29B-A12C3041ADE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{85F9630E-FD05-4FB4-93F2-A8EB2B26E695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85F9630E-FD05-4FB4-93F2-A8EB2B26E695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85F9630E-FD05-4FB4-93F2-A8EB2B26E695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A80CCC99-1DBA-494E-A29B-A12C3041ADE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80CCC99-1DBA-494E-A29B-A12C3041ADE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80CCC99-1DBA-494E-A29B-A12C3041ADE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80CCC99-1DBA-494E-A29B-A12C3041ADE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

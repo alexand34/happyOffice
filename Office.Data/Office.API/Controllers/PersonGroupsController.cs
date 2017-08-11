@@ -4,17 +4,18 @@ using Office.BusinessLogic;
 using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Office.BusinessLogic.Services;
 
 namespace Office.API.Controllers
 {
 
     public class PersonGroupsController : ApiController
     {
-        FaceServiceClient faceServiceClient = new FaceServiceClient("2554672d2fad4aef9238a7476a7460d1", "https://westus.api.cognitive.microsoft.com/face/v1.0");
+        private readonly PersonGroupsService _personGroupsService = new PersonGroupsService();
 
         public PersonGroupsController()
         {
-            
+
         }
 
         [HttpGet]
@@ -22,15 +23,7 @@ namespace Office.API.Controllers
         [Route("api/PersonGroups/getAll")]
         public async Task<IHttpActionResult> GetAll()
         {
-            try
-            {
-                var personGroups = await faceServiceClient.ListPersonGroupsAsync();
-                return Ok(personGroups);
-            }
-            catch (Exception ex)
-            {
-                return Ok(ex);
-            }
+            return Ok(await _personGroupsService.GetAll());
         }
 
         [HttpGet]
@@ -38,15 +31,7 @@ namespace Office.API.Controllers
         [Route("api/PersonGroups/get/{id}")]
         public async Task<IHttpActionResult> Get(string id)
         {
-            try
-            {
-                var personGroup = await faceServiceClient.GetPersonGroupAsync(id);
-                return Ok(personGroup);
-            }
-            catch(Exception ex)
-            {
-                return Ok(ex);
-            }
+            return Ok(await _personGroupsService.Get(id));
         }
 
         [HttpPost]
@@ -56,13 +41,13 @@ namespace Office.API.Controllers
         {
             try
             {
-                await faceServiceClient.CreatePersonGroupAsync(personGroup.PersonGroupId, personGroup.Name, personGroup.UserData);
+                await _personGroupsService.AddPersonGroup(personGroup);
+                return Ok();
             }
-            catch(Exception ex)
+            catch (Exception e)
             {
-                return Ok(ex);
+                return InternalServerError(e);
             }
-            return Ok();
         }
 
         [HttpGet]
@@ -72,12 +57,12 @@ namespace Office.API.Controllers
         {
             try
             {
-                await faceServiceClient.DeletePersonGroupAsync(id);
+                await _personGroupsService.DeletePersonGroup(id);
                 return Ok();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return Ok(ex);
+                return InternalServerError(ex);
             }
         }
     }

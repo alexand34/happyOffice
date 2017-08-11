@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Services\PersonGroupsService.cs" />
     <Compile Include="Services\PersonService.cs" />
+    <Compile Include="Services\RecognitionService.cs" />
     <Compile Include="Services\StoreImagesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +75,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Office.Common\Office.Common.csproj">
+      <Project>{A80CCC99-1DBA-494E-A29B-A12C3041ADE0}</Project>
+      <Name>Office.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Office.Data\Office.Data.csproj">
       <Project>{85F9630E-FD05-4FB4-93F2-A8EB2B26E695}</Project>
       <Name>Office.Data</Name>

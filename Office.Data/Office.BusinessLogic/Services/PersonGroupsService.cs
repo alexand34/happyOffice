@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ProjectOxford.Face;
 using Microsoft.ProjectOxford.Face.Contract;
+using Office.Common;
 
 namespace Office.BusinessLogic.Services
 {
     public class PersonGroupsService
     {
-        FaceServiceClient _faceServiceClient = new FaceServiceClient("2554672d2fad4aef9238a7476a7460d1",
-            "https://westus.api.cognitive.microsoft.com/face/v1.0");
+        FaceServiceClient _faceServiceClient = new FaceServiceClient(Config.ApiKey, Config.EndPointUrl);
 
-        public async Task<PersonGroup[]> GetAll()
+        public async Task<IList<PersonGroup>> GetAll()
         {
             var personGroups = await _faceServiceClient.ListPersonGroupsAsync();
             return personGroups;
@@ -28,15 +28,6 @@ namespace Office.BusinessLogic.Services
         public async Task AddPersonGroup(PersonGroup group)
         {
             await _faceServiceClient.CreatePersonGroupAsync(group.PersonGroupId, group.Name);
-        }
-
-        public async Task TrainAll()
-        {
-            var personGroups = await _faceServiceClient.ListPersonGroupsAsync();
-            foreach (var pg in personGroups)
-            {
-                await _faceServiceClient.TrainPersonGroupAsync(pg.PersonGroupId);
-            }
         }
 
         public async Task TrainById(string id)

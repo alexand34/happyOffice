@@ -1,24 +1,43 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Web;
 using Microsoft.ProjectOxford.Face;
 using Microsoft.ProjectOxford.Face.Contract;
+using Office.Common;
+using Office.Data.Entities;
 
 namespace Office.BusinessLogic.Services
 {
     public class PersonService
     {
-        FaceServiceClient _faceServiceClient = new FaceServiceClient("2554672d2fad4aef9238a7476a7460d1",
-            "https://westus.api.cognitive.microsoft.com/face/v1.0");
-        StoreImagesService sis = new StoreImagesService();
+        FaceServiceClient _faceServiceClient = new FaceServiceClient(Config.ApiKey, Config.EndPointUrl);
 
         public PersonService()
         {
             
         }
 
-        public async Task<Person[]> GetAll(string personGroupId)
+        public async Task<IList<Person>> GetAll(string personGroupId)
         {
             var persons = await _faceServiceClient.ListPersonsAsync(personGroupId);
             return persons;
+        }
+
+        public async Task AddPerson(HttpFileCollection files, NewUser user)
+        {
+            var createdUser = await _faceServiceClient.CreatePersonAsync(user.GroupId, user.Name, user.Position);
+
+            foreach (HttpPostedFile file in files)
+            {
+                await _faceServiceClient.AddPersonFaceAsync(user.GroupId, createdUser.PersonId, file.InputStream);
+            }
+        }
+
+        public async Task DeletePerson(string personGroupId, string personId)
+        {
+            var id = new Guid(personId);
+            await _faceServiceClient.DeletePersonAsync(personGroupId, id);
         }
     }
 }

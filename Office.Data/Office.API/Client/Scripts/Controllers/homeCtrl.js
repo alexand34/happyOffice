@@ -1,12 +1,12 @@
 ﻿'use strict';
 
-happyOffice.controller('homeCtrl', ['$scope', 'homeViewModel', 'AddPersonService', function ($scope, homeViewModel, AddPersonService) {
+happyOffice.controller('homeCtrl', ['$scope', 'homeViewModel', 'AddPersonService', 'groupViewModel', function ($scope, homeViewModel, AddPersonService, groupViewModel) {
     $scope.viewModel = homeViewModel;
-
+    $scope.groupsViewModel = groupViewModel;
+    groupViewModel.init();
     homeViewModel.init();
-
+    $scope.groupId = "null";
     $scope.getTheFiles = function ($files) {
-
         $scope.imagesrc = [];
 
         for (var i = 0; i < $files.length; i++) {
@@ -36,7 +36,7 @@ happyOffice.controller('homeCtrl', ['$scope', 'homeViewModel', 'AddPersonService
             data.append(key, value);
         });
 
-        AddPersonService.AddDeal(data).then(function(response) {
+        AddPersonService.AddDeal(data, $scope.groupId).then(function(response) {
             $scope.faces = response;
         });
     };
@@ -47,8 +47,8 @@ happyOffice.factory('AddPersonService',
         '$http', function ($http) {
 
             var fac = {};
-            fac.AddDeal = function (data) {
-                return $http.post("/api/Index/recognize",
+            fac.AddDeal = function (data, groupId) {
+                return $http.post("/api/Index/recognize/"+groupId,
                     data,
                     {
                         headers: { 'Content-Type': undefined },

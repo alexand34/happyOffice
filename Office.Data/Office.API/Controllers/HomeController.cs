@@ -10,7 +10,7 @@ namespace Office.API.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Default Page";
             return View();
         }
     }
