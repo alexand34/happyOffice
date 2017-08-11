@@ -66,3 +66,5 @@ C:\office\Office.Data\Office.API\obj\Debug\Office.API.csproj.App.config
 C:\office\Office.Data\Office.API\obj\Debug\Office.API.csprojResolveAssemblyReference.cache
 C:\office\Office.Data\Office.API\obj\Debug\Office.API.dll
 C:\office\Office.Data\Office.API\obj\Debug\Office.API.pdb
+C:\office\Office.Data\Office.API\bin\Office.Data.dll
+C:\office\Office.Data\Office.API\bin\Office.Data.pdb

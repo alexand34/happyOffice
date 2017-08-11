@@ -3,3 +3,15 @@ C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Office.BusinessLogic.pdb
 C:\office\Office.Data\Office.BusinessLogic\obj\Debug\Office.BusinessLogic.csprojResolveAssemblyReference.cache
 C:\office\Office.Data\Office.BusinessLogic\obj\Debug\Office.BusinessLogic.dll
 C:\office\Office.Data\Office.BusinessLogic\obj\Debug\Office.BusinessLogic.pdb
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Office.BusinessLogic.dll.config
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Microsoft.ProjectOxford.Common.dll
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Microsoft.ProjectOxford.Face.dll
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Newtonsoft.Json.dll
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\System.Net.Http.Extensions.dll
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\System.Net.Http.Primitives.dll
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Newtonsoft.Json.xml
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\System.Net.Http.Extensions.xml
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\System.Net.Http.Primitives.xml
+C:\office\Office.Data\Office.BusinessLogic\obj\Debug\Office.BusinessLogic.csproj.App.config
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Office.Data.dll
+C:\office\Office.Data\Office.BusinessLogic\bin\Debug\Office.Data.pdb

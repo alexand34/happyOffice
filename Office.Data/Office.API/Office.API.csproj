@@ -203,6 +203,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\PersonGroupsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -212,6 +213,57 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Client\charts.html" />
+    <Content Include="Client\css\bootstrap-table.css" />
+    <Content Include="Client\css\bootstrap-theme.css" />
+    <Content Include="Client\css\bootstrap-theme.min.css" />
+    <Content Include="Client\css\bootstrap.css" />
+    <Content Include="Client\css\bootstrap.min.css" />
+    <Content Include="Client\css\datepicker.css" />
+    <Content Include="Client\css\datepicker3.css" />
+    <Content Include="Client\css\font-awesome.min.css" />
+    <Content Include="Client\css\main.css" />
+    <Content Include="Client\css\styles.css" />
+    <Content Include="Client\elements.html" />
+    <Content Include="Client\fonts\fontawesome-webfont.svg" />
+    <Content Include="Client\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Client\index.html" />
+    <Content Include="Client\js\angular-route.js" />
+    <Content Include="Client\js\bootstrap-datepicker.js" />
+    <Content Include="Client\js\bootstrap.js" />
+    <Content Include="Client\js\bootstrap.min.js" />
+    <Content Include="Client\js\chart-data.js" />
+    <Content Include="Client\js\chart.min.js" />
+    <Content Include="Client\js\custom.js" />
+    <Content Include="Client\js\easypiechart-data.js" />
+    <Content Include="Client\js\easypiechart.js" />
+    <Content Include="Client\js\html5shiv.min.js" />
+    <Content Include="Client\js\jquery-1.11.1.min.js" />
+    <Content Include="Client\js\lumino.glyphs.js" />
+    <Content Include="Client\js\modernizr.js" />
+    <Content Include="Client\js\npm.js" />
+    <Content Include="Client\js\q.js" />
+    <Content Include="Client\js\respond.min.js" />
+    <Content Include="Client\js\underscore.js" />
+    <Content Include="Client\login.html" />
+    <Content Include="Client\Scripts\Controllers\homeCtrl.js" />
+    <Content Include="Client\Scripts\Controllers\personCtrl.js" />
+    <Content Include="Client\Scripts\directives\directive.js" />
+    <Content Include="Client\Scripts\main.js" />
+    <Content Include="Client\panels.html" />
+    <Content Include="Client\Scripts\Controllers\personGroupsCtrl.js" />
+    <Content Include="Client\Scripts\Services\groupSvc.js" />
+    <Content Include="Client\Scripts\Services\homeSvc.js" />
+    <Content Include="Client\Scripts\Services\personSvc.js" />
+    <Content Include="Client\Scripts\viewModels\group.vm.js" />
+    <Content Include="Client\Scripts\viewModels\home.vm.js" />
+    <Content Include="Client\Scripts\viewModels\person.vm.js" />
+    <Content Include="Client\views\groups\addPersonGroup.html" />
+    <Content Include="Client\views\groups\index.html" />
+    <Content Include="Client\views\home.html" />
+    <Content Include="Client\views\Persons\addPerson.html" />
+    <Content Include="Client\views\Persons\persons.html" />
+    <Content Include="Client\widgets.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -243,6 +295,23 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Client\css\bootstrap-theme.css.map" />
+    <Content Include="Client\css\bootstrap-theme.min.css.map" />
+    <Content Include="Client\css\bootstrap.css.map" />
+    <Content Include="Client\css\bootstrap.min.css.map" />
+    <Content Include="Client\fonts\fontawesome-webfont.eot" />
+    <Content Include="Client\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Client\fonts\fontawesome-webfont.woff" />
+    <Content Include="Client\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Client\fonts\FontAwesome.otf" />
+    <Content Include="Client\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Client\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Client\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Client\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Client\sass\.sass-cache\deff34d1f5b7167181b556002c25068d6adc024d\styles.scssc" />
+    <Content Include="Client\sass\styles.scss" />
+    <Content Include="Client\tables\data1.json" />
+    <Content Include="Client\tables\data2.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -270,6 +339,10 @@
       <Project>{257b61b9-6a67-48eb-ac74-18a1df7f3915}</Project>
       <Name>Office.BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Office.Data\Office.Data.csproj">
+      <Project>{85f9630e-fd05-4fb4-93f2-a8eb2b26e695}</Project>
+      <Name>Office.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -293,7 +366,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65015</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
