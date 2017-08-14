@@ -11,7 +11,7 @@ namespace Office.API.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Default Page";
-            return View();
+            return RedirectToRoute("/Client/");
         }
     }
 }
