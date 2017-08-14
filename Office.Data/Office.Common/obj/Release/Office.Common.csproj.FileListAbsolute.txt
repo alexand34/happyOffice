@@ -1,0 +1,5 @@
+C:\office\Office.Data\Office.Common\bin\Release\Office.Common.dll
+C:\office\Office.Data\Office.Common\bin\Release\Office.Common.pdb
+C:\office\Office.Data\Office.Common\obj\Release\Office.Common.csprojResolveAssemblyReference.cache
+C:\office\Office.Data\Office.Common\obj\Release\Office.Common.dll
+C:\office\Office.Data\Office.Common\obj\Release\Office.Common.pdb
