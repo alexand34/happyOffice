@@ -26,11 +26,19 @@ namespace Office.BusinessLogic.Services
 
         public async Task AddPerson(HttpFileCollection files, NewUser user)
         {
-            var createdUser = await _faceServiceClient.CreatePersonAsync(user.GroupId, user.Name, user.Position);
-
-            foreach (HttpPostedFile file in files)
+            try
             {
-                await _faceServiceClient.AddPersonFaceAsync(user.GroupId, createdUser.PersonId, file.InputStream);
+                var createdUser = await _faceServiceClient.CreatePersonAsync(user.GroupId, user.Name, user.Position);
+
+                for(int i = 0; i < files.Count; i++)
+                {
+                    HttpPostedFile file = files[i];
+                    await _faceServiceClient.AddPersonFaceAsync(user.GroupId, createdUser.PersonId, file.InputStream);
+                }
+            }
+            catch(Exception ex)
+            {
+
             }
         }
 

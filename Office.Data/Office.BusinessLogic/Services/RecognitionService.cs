@@ -26,7 +26,7 @@ namespace Office.BusinessLogic.Services
 
         public async Task<string> Recognize(HttpFileCollection files, string personGroupId)
         {
-            string recognitionString = "We have recognized ";
+            string recognitionString = "We have recognized: ";
             int guests = 0;
             int knownPeople = 0;
             if (files.Count < 1)

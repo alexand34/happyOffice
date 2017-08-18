@@ -1,4 +1,13 @@
 ﻿<div ng-controller="homeCtrl" ng-files>
+
+    <div class="container" id="spinner" ng-if="loading==true">
+        <div class="row">
+            <div class="animationload">
+                <div class="osahanloading"></div>
+            </div>
+        </div>
+    </div>
+
     <div>
         <div class="row">
             <ol class="breadcrumb">
@@ -22,7 +31,8 @@
             <div class="panel-heading">
                 <label>Recognize person</label>
             </div>
-            <div class="col-md-12" style="margin: 10px;"><button class="btn btn-success pull-right" ng-click="Submit()">Submit</button>
+            <div class="col-md-12" style="margin: 10px;">
+                <button class="btn btn-success pull-right" ng-click="Submit()">Submit</button>
             </div>
             <div class="col-md-4" style="margin-top: -42px">
                 <select class="form-control" name="singleSelect" id="singleSelect" ng-model="groupId">
@@ -31,7 +41,9 @@
                 </select>
             </div>
             <div ng-repeat="face in faces">
-                <div class="alert bg-success" style="margin: 10px" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em>{{face}}<a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a>
+                <div class="alert bg-success" style="margin: 10px" role="alert">
+                    <em class="fa fa-lg fa-warning">&nbsp;</em>{{face}}
+                    <a href="#" class="pull-right"><em class="fa fa-lg fa-close"></em></a>
                 </div>
             </div>
             <button class="btn btn-primary" style="cursor: pointer; margin: 10px;" onclick="document.getElementById('file').click();">Add Image</button>
@@ -45,7 +57,7 @@
                         </div>
                     </div>
                     <div style="position: absolute; bottom: 0; display: block; width: 100%; color: #fff; background-color: #333;">
-                        <input id="file" ng-hide="true" type="file" accept="images/*" class="form-control" multiple ng-files="getTheFiles($files)"/>
+                        <input id="file" ng-hide="true" type="file" accept="images/*" class="form-control" multiple ng-files="getTheFiles($files)" />
 
                     </div>
                 </div>

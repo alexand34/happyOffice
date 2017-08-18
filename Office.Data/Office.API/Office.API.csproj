@@ -231,6 +231,7 @@
     <Content Include="Client\css\datepicker3.css" />
     <Content Include="Client\css\font-awesome.min.css" />
     <Content Include="Client\css\main.css" />
+    <Content Include="Client\css\spinner.css" />
     <Content Include="Client\css\styles.css" />
     <Content Include="Client\elements.html" />
     <Content Include="Client\fonts\fontawesome-webfont.svg" />

@@ -52,21 +52,22 @@ happyOffice.controller('personCtrl', ['$scope', 'personViewModel', 'AddDealServi
     };
 }]);
 
+
 happyOffice.factory('AddDealService',
     [
         '$http', function ($http) {
 
             var fac = {};
-
             fac.AddDeal = function (data) {
-                return $http.post("/api/Person/addPerson",
+                return $http.post("/api/Person/AddPerson/",
                     data,
                     {
                         headers: { 'Content-Type': undefined },
                         transformRequest: angular.identity
+                    }).then(function successCallback(response) {
+                        return response.data;
                     });
             }
             return fac;
         }
     ]);
-
