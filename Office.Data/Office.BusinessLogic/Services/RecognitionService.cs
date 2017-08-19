@@ -21,6 +21,17 @@ namespace Office.BusinessLogic.Services
             foreach (var pg in personGroups)
             {
                 await _faceServiceClient.TrainPersonGroupAsync(pg.PersonGroupId);
+                TrainingStatus trainingStatus = null;
+                while (true)
+                {
+                    trainingStatus = await _faceServiceClient.GetPersonGroupTrainingStatusAsync(pg.PersonGroupId);
+
+                    if (trainingStatus.Status.ToString() != "running")
+                    {
+                        break;
+                    }
+                    await Task.Delay(1000);
+                }
             }
         }
 

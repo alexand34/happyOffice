@@ -248,6 +248,7 @@
     <Content Include="Client\js\easypiechart.js" />
     <Content Include="Client\js\html5shiv.min.js" />
     <Content Include="Client\js\jquery-1.11.1.min.js" />
+    <Content Include="Client\js\jquery-3.2.1.min.js" />
     <Content Include="Client\js\lumino.glyphs.js" />
     <Content Include="Client\js\modernizr.js" />
     <Content Include="Client\js\npm.js" />

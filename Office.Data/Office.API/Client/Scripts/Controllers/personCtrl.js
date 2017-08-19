@@ -37,6 +37,7 @@ happyOffice.controller('personCtrl', ['$scope', 'personViewModel', 'AddDealServi
     // Submit Forn data
     $scope.Submit = function () {
         //FILL FormData WITH FILE DETAILS.
+        $('#spinner').show();
         var data = new FormData();
 
         angular.forEach($scope.Files, function (value, key) {
@@ -45,9 +46,7 @@ happyOffice.controller('personCtrl', ['$scope', 'personViewModel', 'AddDealServi
 
         data.append("NewUser", angular.toJson($scope.NewUser));
         AddDealService.AddDeal(data).then(function (response) {
-            alert("Added Successfully");
-        }, function () {
-
+            location.href = "/Client/#/persons/"+$scope.groupId;
         });
     };
 }]);

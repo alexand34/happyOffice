@@ -5,10 +5,15 @@ happyOffice.service('homeViewModel', ['$http', 'homeSvc', function ($http, homeS
             init: function () {
                 homeSvc.init().then(function(result) {
                     _.extend(viewModel, result);
+                }).then(function (res) {
+                    $('#spinner').hide();
                 });
             },
             trainAll: function () {
-                homeSvc.trainAll();
+                $('#spinner').show();
+                homeSvc.trainAll().then(function (res) {
+                    $('#spinner').hide();
+                });
             }
         };
         return viewModel;

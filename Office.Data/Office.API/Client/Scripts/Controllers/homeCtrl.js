@@ -30,7 +30,7 @@ happyOffice.controller('homeCtrl', ['$scope', 'homeViewModel', 'AddPersonService
     };
     // Submit Forn data
     $scope.Submit = function () {
-        $scope.loading = true;
+        $('#spinner').show();
         //FILL FormData WITH FILE DETAILS.
         var data = new FormData();
 
@@ -40,7 +40,7 @@ happyOffice.controller('homeCtrl', ['$scope', 'homeViewModel', 'AddPersonService
 
         AddPersonService.AddDeal(data, $scope.groupId).then(function(response) {
             $scope.faces = response;
-            $scope.loading = false;
+            $('#spinner').hide();
         });
 
     };
